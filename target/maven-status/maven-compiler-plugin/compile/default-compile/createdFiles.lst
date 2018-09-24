@@ -1,0 +1,5 @@
+com\ibm\javaspring\springcurdangular\service\UserService.class
+com\ibm\javaspring\springcurdangular\model\User.class
+com\ibm\javaspring\springcurdangular\controller\UserResourse.class
+com\ibm\javaspring\springcurdangular\repository\UserRepository.class
+com\ibm\javaspring\springcurdangular\CrudApp.class

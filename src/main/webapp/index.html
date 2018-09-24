@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customers</title>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-resource.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/general.controller.js"></script>
+<script type="text/javascript" src="app/user.service.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+<style>
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid lightblue;
+}
+thead th:nth-child(1) {
+  width: 10%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+}
+th, td {
+  padding: 20px;
+}
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead th {
+  font-family: 'Rock Salt', cursive;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+tbody tr:nth-child(odd) {
+  background-color:grey ;
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+
+
+</style>
+<body ng-app="crudApp" ng-controller="GeneralController">
+
+	<center><h3>Customers</h3></center>
+			<form  ng-submit="saveUser()">
+				<div >
+					<label for="userName">Name</label> <input type="text"
+						ng-model="user.name" " id="userName"
+						placeholder="User Name">
+				</div>
+				<div >
+					<label for="userEmail">Email</label> <input type="text"
+						ng-model="user.email" 
+						id="userEmail" placeholder="Email">
+				</div>
+
+				<div >
+					<label for="userPassword">Department</label> 
+					<input type="text"
+						ng-model="user.password" 
+						id="userPassword" placeholder="Password">
+				</div>
+
+				<button type="submit" >{{buttonText}}</button>
+				
+			</form>
+
+			<div >
+				<center><table >
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Department</th>
+						<th></th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="user in users">
+						<td>{{user.name}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.password}}</td>
+						<td>
+							<button type="button" 
+								ng-click="updateUserInit(user)">
+								Edit
+							</button>
+							<button type="button" 
+								ng-click="deleteUser(user)">
+							Delete
+							</button>
+						</td>
+					</tr></tbody>
+				</table></center>
+			</div>
+	
+
+</body>
+</html>
